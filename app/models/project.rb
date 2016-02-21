@@ -3,7 +3,8 @@ class Project < ActiveRecord::Base
 	validates_presence_of :name
 
 	belongs_to :user
-	has_many :notes
+	has_many :notes, -> { order('created_at DESC, title ASC')}, :dependent => :destroy
+	has_and_belongs_to_many :stages
 
 
 	def name_with_date
