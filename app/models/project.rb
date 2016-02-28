@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-	validates_presence_of :name
+	validates :name, presence: true
 
 	belongs_to :user
 	has_many :notes, -> { order('created_at DESC, title ASC')}, :dependent => :destroy
