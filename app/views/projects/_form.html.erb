@@ -1,27 +1,7 @@
-<%= form_for(project) do |f| %>
-<% if project.errors.any? %>
-  <div id="error_explanation">
-  	<h2><%= pluralize(project.errors.count, "error") %>
-  		prohibited this project from being saved:</h2>
+<%= simple_form_for(project) do |f| %>
+  	<%= f.input :name %>
+  	<%= f.input :description %>
 
-  		<ul>
-  			<% project.errors.full_messages.each do |msg| %>
-  			<li><%= msg %></li>
-  			<% end %>
-  		</ul>
-  	</div>
-  	<% end %>
+	<%= f.button :submit, class: "btn-primary" %>
 
-	<p>
-		<%= f.label :name %><br>
-		<%= f.text_field :name %>
-	</p>
-
-	<p>
-		<%= f.label :description %><br>
-		<%= f.text_area :description %>
-	</p>
-
-
-	<%= f.submit %>
-	<% end %>
+<% end %>

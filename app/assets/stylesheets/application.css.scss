@@ -3,6 +3,14 @@
 @import "font-awesome";
 @import "projects";
 
+form {
+	max-width:  500px;
+}
+
+body {
+	padding-top: 80px;
+}
+
 .page-header {
 	position: relative;
 	padding-bottom: 0px;
