@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+	before_action :set_project, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@projects = Project.all
@@ -8,8 +9,7 @@ class ProjectsController < ApplicationController
 		@project = Project.new
 	end
 
-	def show
-		@project = Project.find(params[:id])
+	def show	
 	end
 
 	def create
@@ -24,12 +24,10 @@ class ProjectsController < ApplicationController
 		end
 	end
 
-	def edit
-		@project = Project.find(params[:id])
+	def edit	
 	end
 
 	def update
-		@project = Project.find(params[:id])
 		@project.update(project_params)
 
 		if @project.update(project_params)
@@ -42,7 +40,6 @@ class ProjectsController < ApplicationController
 	end
 
 	def destroy
-		@project = Project.find(params[:id])
 		@project.destroy
 
 		flash[:notice] = "Project has been deleted."
@@ -55,5 +52,13 @@ class ProjectsController < ApplicationController
 	def project_params
 		params.require(:project).permit(:name, :description)
 	end
+
+	def set_project
+		@project = Project.find(params[:id])
+	rescue ActiveRecord::RecordNotFound
+	flash[:alert] = "The project you were looking for could not be found."
+	redirect_to projects_path
+	end
+
 
 end
