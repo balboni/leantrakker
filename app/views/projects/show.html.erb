@@ -14,3 +14,12 @@
 <% title(@project.name, "Projects") %>
 
 <p><%= @project.description %></p>
+
+<header>
+	<h2>Tasks</h2>
+
+	<ul class="actions">
+		<li><%= link_to "New Task", new_project_task_path(@project),
+		class: "new" %></li>
+	</ul>
+</header>

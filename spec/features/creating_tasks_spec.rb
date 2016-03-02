@@ -20,7 +20,7 @@ RSpec.feature "Users can create new tasks" do
 		click_button "Create Task"
 
 		expect(page).to have_content "Task has not been created."
-		expect(page).to have_content "Subject can't be blank."
-		expect(page).to have_content "Description can't be blank."
+		expect(page).to have_content "Subjectcan't be blank"
+		expect(page).to have_content "Descriptioncan't be blank"
 	end
 end

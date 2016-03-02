@@ -1,0 +1,11 @@
+<div id="task">
+	<header>
+		<h1><%= @project.name %></h1>
+	</header>
+
+	<header>
+		<h2><%= @task.subject %></h2>
+	</header>
+
+	<%= simple_format(@task.description) %>
+</div>
