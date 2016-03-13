@@ -35,7 +35,13 @@ class TasksController < ApplicationController
 			render "edit"
 		end
 	end
-	
+
+	def destroy
+		@task.destroy
+		flash[:notice] = "Task has been deleted."
+
+		redirect_to @project
+	end
 
 
 	private

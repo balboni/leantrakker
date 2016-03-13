@@ -9,6 +9,9 @@
 		<ul class="actions">
 			<li><%= link_to "Edit Task", [:edit, @project, @task],
 			class: "edit" %></li>
+			<li><%= link_to "Delete Task", [@project, @task], method: :delete,
+			data: {confirm: "Are you sure you want to delete this task?"},
+			class: "delete" %></li>
 		</ul>
 	</header>
 
