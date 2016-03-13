@@ -23,3 +23,13 @@
 		class: "new" %></li>
 	</ul>
 </header>
+
+<ul id="tasks">
+	<% @project.tasks.each do |task| %>
+	  <li>
+	  	#<%= task.id %> -
+	  	<%= link_to task.subject, [@project, task] %>
+	  </li>
+	<% end %>
+</ul>
+
