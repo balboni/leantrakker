@@ -1,0 +1,6 @@
+<%= simple_form_for([project, comment]) do |f| %>
+  <%= f.input :subject %>
+  <%= f.input :comment %>
+
+  <%= f.button :submit, class: "btn-primary" %>
+<% end %>

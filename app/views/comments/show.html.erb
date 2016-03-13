@@ -1,0 +1,11 @@
+<div id="comment">
+	<header>
+		<h1><%= @project.name %></h1>
+	</header>
+
+	<header>
+		<h2><%= @comment.subject %></h2>
+	</header>
+
+	<%= simple_format(@comment.comment) %>
+</div>

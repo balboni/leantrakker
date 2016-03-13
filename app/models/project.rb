@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
 	has_many :notes, -> { order('created_at DESC, title ASC')}, :dependent => :delete_all
 	has_and_belongs_to_many :stages
 	has_many :tasks, dependent: :delete_all
+	has_many :comments
 
 
 	def name_with_date
