@@ -20,7 +20,22 @@ class TasksController < ApplicationController
 	end
 
 	def show
+
 	end
+
+	def edit
+	end
+	
+	def update
+		if @task.update(task_params)
+			flash[:notice] = "Task has been updated."
+			redirect_to [@project, @task]
+		else
+			flash.now[:alert] = "Task has not been updated."
+			render "edit"
+		end
+	end
+	
 
 
 	private

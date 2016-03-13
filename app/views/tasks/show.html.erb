@@ -5,6 +5,11 @@
 
 	<header>
 		<h2><%= @task.subject %></h2>
+
+		<ul class="actions">
+			<li><%= link_to "Edit Task", [:edit, @project, @task],
+			class: "edit" %></li>
+		</ul>
 	</header>
 
 	<%= simple_format(@task.description) %>
