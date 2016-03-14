@@ -33,9 +33,13 @@ class CommentsController < ApplicationController
 			render "edit"
 		end
 	end
-	
 
+	def destroy
+		@comment.destroy
+		flash[:notice] = "Comment has been deleted."
 
+		redirect_to @project
+	end
 
 private
 
