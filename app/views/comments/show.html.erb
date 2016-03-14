@@ -5,6 +5,11 @@
 
 	<header>
 		<h2><%= @comment.subject %></h2>
+
+		<ul class="actions">
+			<li><%= link_to "Edit Comment", [:edit, @project, @comment],
+			  class: "edit" %></li>
+		</ul>
 	</header>
 
 	<%= simple_format(@comment.comment) %>
