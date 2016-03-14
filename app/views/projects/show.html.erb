@@ -35,3 +35,12 @@
 	<% end %>
 </ul>
 
+<ul id="comments">
+	<% @project.comments.each do |comment| %>
+	<li>
+		#<%= comment.id %> -
+		<%= link_to comment.subject, [@project, comment] %>
+	</li>
+	<% end %>
+</ul>
+
